@@ -33,9 +33,14 @@ test_dataloader = DataLoader(test_data, batch_size=batch_size, shuffle=True)
 
 # %%
 #nn.Moduleは「全自動の管理パッケージ」のような存在。
-#管理作業を自動化する機能が詰まっている
+#管理作業を自動化する機能が詰まっている。
+#class Name()とすることで"継承"（"引数"とは違うことに注意）する。最初からnn.Moduleが持っている機能を使えるようになる。
+#継承することで「NeuralNetwork という名前で新しく定義するけど、そのベース（型紙）には nn.Module を使ってくれ！」という指示出しになる。
+#
 class NeuralNetwork(nn.Module):
     def __init__(self):
+        #nn.Module:基底クラス（スーパークラス、他のクラスが継承するための親クラス）
+        #nn.Moduleを使うことで➀パラメータ管理➁GPU対応➂保存機能　など色々提供してくれる。
         #super().__init__()と書くことで自分(NeuralNetwork)をPytorch用の魔法がかかった特別なクラスとして正式に登録する
         #Pythonの仕組み上、自分のクラスで __init__（初期化メソッド）を書くと、親クラス（nn.Module）が元々持っていた初期化処理が上書きされて消えてしまう。
         super(NeuralNetwork,self).__init__()

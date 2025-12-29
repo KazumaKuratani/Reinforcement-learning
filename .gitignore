@@ -1,0 +1,21 @@
+# Pythonのキャッシュ
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebookのチェックポイント
+.ipynb_checkpoints/
+
+# 仮想環境
+venv/
+.venv/
+dqn_env/
+
+# OSの設定ファイル
+.DS_Store
+Thumbs.db
+
+# 大きなデータファイル（必要に応じて追加）
+*.pkl
+*.npy
+*.zip
+*.tar.gz
